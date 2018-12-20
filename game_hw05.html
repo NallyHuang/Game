@@ -31,11 +31,10 @@
 
 <body>
 <div id="info">
-    <a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - MD2 Loader -
+  <a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - MD2 Loader -
     <br />
-    use arrows to control characters, mouse for camera
     <br>
-    <p id='msg'></p>
+  <p id='msg'></p>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/94/three.min.js"></script>
@@ -48,8 +47,8 @@
 <script src='js/Gyroscope.js'></script>
 	
 <audio controls volume="0.1" id="sound" style="display:none">
-  <source src="Root.mp3" type='audio/mp3'>
-	</audio>
+  <source src="music/Root.mp3" type='audio/mp3'>
+</audio>
 <script>
     class MD2Wrapper {
         constructor (config, controls, pos, scale = 1) {
@@ -147,7 +146,7 @@
 		//  GROUND
 
         //var gt = new THREE.TextureLoader().load( "grasslight-big.jpg" );
-        var gt = new THREE.TextureLoader().load( "grasslight-big.jpg");
+        var gt = new THREE.TextureLoader().load( "pic/grasslight-big.jpg");
         var gg = new THREE.PlaneBufferGeometry( 16000, 16000 );
         var gm = new THREE.MeshPhongMaterial( { color: 0xffffff, map: gt } );
 
@@ -219,7 +218,7 @@
         box5.castShadow = box5.receiveShadow = true;
         scene.add(box5);
 
-		var material2 = new THREE.MeshBasicMaterial ({map: THREE.ImageUtils.loadTexture('coin.png'),  side:THREE.DoubleSide});
+		var material2 = new THREE.MeshBasicMaterial ({map: THREE.ImageUtils.loadTexture('pic/coin.png'),  side:THREE.DoubleSide});
         coin = new THREE.Mesh(new THREE.CylinderGeometry(20, 20, 10, 20), material2);
         coin.position.x= 200;
         coin.position.y= 120;
@@ -288,7 +287,7 @@
 
         box3 = new THREE.Box3();
         box3Helper = new THREE.Box3Helper(box3)
-        scene.add ( box3Helper )
+        //scene.add ( box3Helper )
 
     }
 
