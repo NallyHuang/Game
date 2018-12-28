@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+
+<body> 
+<div id="info">Agent (Seek, Arrival, Collision)<br>
+<p id="message"></p>
+	<span >Time：<span id="Check_i">0分0秒</span></span>
+</div>
+ 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
+<script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<script src="./agent0.js"></script>
+<script src="./obstacle.js"></script>
+<script src="./target.js"></script>
+
+<!-- must be before main.js -->
+<script src="./scene.js"></script>
+<script src="./threemain.js"></script>
+
+<script src="./main.js"></script>
+	
+
+<script type="text/javascript">
+    var SetMinute = 0;
+    function Check_Time() {
+        SetMinute += 1;
+        var Check_i = document.getElementById("Check_i");
+
+        var Cal_Hour = Math.floor(SetMinute / 3600);
+        var Cal_Minute = Math.floor(Math.floor(SetMinute % 3600) / 60);
+        var Cal_Second = SetMinute % 60;
+
+        Check_i.innerHTML =  Cal_Minute + "分" + Cal_Second + "秒";
+
+    }
+    var mm = window.setInterval("Check_Time()", 1000);
+
+</script>
+</body>
+
+</html>
